@@ -1,5 +1,5 @@
-# models/ensemble_model.py
-# Author: Microsoft Copilot
+# models/ensemble_models.py
+# Authors: David Blodgett and Microsoft Copilot
 # Description: Core logic for EnsembleModel class used in classification and regression tasks.
 # This file defines an object-oriented interface to add, train, and predict using multiple models.
 
@@ -8,6 +8,7 @@ from typing import List, Union
 import numpy as np
 
 class EnsembleModel:
+    '''
     def __init__(self, strategy: str = "hard_voting"):
         """
         Initialize the ensemble model.
@@ -18,7 +19,17 @@ class EnsembleModel:
         self.models: List = []
         self.strategy = strategy
         self.is_classifier = True  # Will adjust after first fit
+    '''
+    
+    def __init__(self, strategy: str = "hard_voting", models: dict = None):
+        self.models: List = []
+        self.strategy = strategy
+        self.is_classifier = True  # Will adjust after first fit
 
+        if models:
+            for model in models.values():
+                self.add_model(model)
+        
     def add_model(self, model):
         """
         Add a model to the ensemble.

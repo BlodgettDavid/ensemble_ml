@@ -1,6 +1,29 @@
+# === Python & Virtual Environment ===
 .venv_ensemble/
 __pycache__/
 *.py[cod]
 *.pyo
+
+# === System Files ===
 .DS_Store
-*.log
+
+# === Logs ===
+logs/*
+!logs/.gitkeep
+*.log  # just in case a log lands outside the logs/ folder
+logs/*.txt  # precaution against accidental text logs
+
+# === Results Output ===
+results/*
+!results/.gitkeep
+results/*.txt
+results/*.csv
+
+# === Plots & Visual Artifacts ===
+plots/*
+!plots/.gitkeep
+*.png  # backup filter for any loose images
+
+# === Miscellaneous ===
+*.log  # safe duplicate catch-all
+!.gitkeep  # always allow these to keep folder structure
